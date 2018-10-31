@@ -2,7 +2,7 @@
     <div class="msite">
         <HeaderTop title="龙凤佳园">
             <span class="header_search" slot="left">
-                <i class="iconfont icon-sousuo"></i>
+                <i class="iconfont icon-iconsearch"></i>
             </span>
             <span class="header_login" slot="right">
                 <span class="header_login_text">登录|注册</span>
@@ -14,71 +14,112 @@
                     <div class="swiper-slide">
                         <a href="javascript:" class="link_to_food">
                             <div class="food_container">
-                                <img src="./images/nav/1.jpg" alt="">
+                                <img src="./images/nav/1.jpeg" alt="">
                             </div>
                             <span>甜品饮品</span>
                         </a>
                         <a href="javascript:" class="link_to_food">
                             <div class="food_container">
-                                <img src="./images/nav/1.jpg" alt="">
+                                <img src="./images/nav/1.jpeg" alt="">
                             </div>
                             <span>商超便利</span>
                         </a>
                         <a href="javascript:" class="link_to_food">
                             <div class="food_container">
-                                <img src="./images/nav/1.jpg" alt="">
+                                <img src="./images/nav/1.jpeg" alt="">
                             </div>
                             <span>美食</span>
                         </a>
                         <a href="javascript:" class="link_to_food">
                             <div class="food_container">
-                                <img src="./images/nav/1.jpg" alt="">
+                                <img src="./images/nav/1.jpeg" alt="">
                             </div>
                             <span>简餐</span>
                         </a>
                         <a href="javascript:" class="link_to_food">
                             <div class="food_container">
-                                <img src="./images/nav/1.jpg" alt="">
+                                <img src="./images/nav/1.jpeg" alt="">
                             </div>
                             <span>新店特惠</span>
                         </a>
                         <a href="javascript:" class="link_to_food">
                             <div class="food_container">
-                                <img src="./images/nav/1.jpg" alt="">
+                                <img src="./images/nav/1.jpeg" alt="">
                             </div>
                             <span>准时达</span>
                         </a>
                         <a href="javascript:" class="link_to_food">
                             <div class="food_container">
-                                <img src="./images/nav/1.jpg" alt="">
+                                <img src="./images/nav/1.jpeg" alt="">
                             </div>
                             <span>预定早餐</span>
                         </a>
                         <a href="javascript:" class="link_to_food">
                             <div class="food_container">
-                                <img src="./images/nav/1.jpg" alt="">
+                                <img src="./images/nav/1.jpeg" alt="">
+                            </div>
+                            <span>土豪推荐</span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:" class="link_to_food">
+                            <div class="food_container">
+                                <img src="./images/nav/2.jpeg" alt="">
+                            </div>
+                            <span>甜品饮品</span>
+                        </a>
+                        <a href="javascript:" class="link_to_food">
+                            <div class="food_container">
+                                <img src="./images/nav/2.jpeg" alt="">
+                            </div>
+                            <span>商超便利</span>
+                        </a>
+                        <a href="javascript:" class="link_to_food">
+                            <div class="food_container">
+                                <img src="./images/nav/2.jpeg" alt="">
+                            </div>
+                            <span>美食</span>
+                        </a>
+                        <a href="javascript:" class="link_to_food">
+                            <div class="food_container">
+                                <img src="./images/nav/2.jpeg" alt="">
+                            </div>
+                            <span>简餐</span>
+                        </a>
+                        <a href="javascript:" class="link_to_food">
+                            <div class="food_container">
+                                <img src="./images/nav/2.jpeg" alt="">
+                            </div>
+                            <span>新店特惠</span>
+                        </a>
+                        <a href="javascript:" class="link_to_food">
+                            <div class="food_container">
+                                <img src="./images/nav/2.jpeg" alt="">
+                            </div>
+                            <span>准时达</span>
+                        </a>
+                        <a href="javascript:" class="link_to_food">
+                            <div class="food_container">
+                                <img src="./images/nav/2.jpeg" alt="">
+                            </div>
+                            <span>预定早餐</span>
+                        </a>
+                        <a href="javascript:" class="link_to_food">
+                            <div class="food_container">
+                                <img src="./images/nav/2.jpeg" alt="">
                             </div>
                             <span>土豪推荐</span>
                         </a>
                     </div>
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
         </nav>
         <div class="msite_shop_list">
             <div class="shop_header">
-                <i class="iconfont icon-xuanxiang"></i>
+                <i class="iconfont icon-gengduo"></i>
                 <span class="shop_header_title">附近商家</span>
-            </div>
-            <div class="shop_container">
-                <ul class="shop_list">
-                    <li class="shop_li border-1px">
-                        <a>
-                            <div class="shop_left">
-                                <img class="shop_img" alt="">
-                            </div>
-                        </a>
-                    </li>
-                </ul>
+                <ShopList/>
             </div>
         </div>
     </div>
@@ -86,10 +127,24 @@
 
 <script>
 import HeaderTop from '../../components/HeaderTop/HeaderTop'
+import ShopList from '../../components/ShopList/ShopList'
+import Swiper from 'swiper'
+import 'swiper/dist/css/swiper.min.css'
+import Vue from 'vue'
 export default {
   name: 'MSite',
   components: {
-    HeaderTop
+    HeaderTop,
+    ShopList
+  },
+  mounted  () {
+    let swiperbanner = new Swiper('.swiper-container', {
+      loop: true, // 循环模式选项
+      pagination: {
+        el: '.swiper-pagination'
+      }
+    })
+    Vue.use({swiperbanner})
   }
 }
 </script>
@@ -116,10 +171,10 @@ export default {
                         flex-wrap wrap
                         .link_to_food
                             width 25%
+                            text-align center
                             .food_container
                                 display block
                                 width 100%
-                                text-align center
                                 padding-bottom 10px
                                 font-size 0
                                 img
@@ -132,20 +187,20 @@ export default {
                                     text-align center
                                     font-size 13px
                                     color #666
-                            .swiper-pagination
-                            >span.swiper-pagination-bullet-active
-                                background #02a774
-                        .msite_shop_list
-                                top-border-1px(#e4e4e4)
-                                margin-top 10px
-                                background #fff
-                                .shop_header
-                                padding 10px 10px 0
-                                .shop_icon
-                                    margin-left 5px
-                                    color #999
-                                .shop_header_title
-                                    color #999
-                                    font-size 14px
-                                    line-height 20px
+                .swiper-pagination
+                    >span.swiper-pagination-bullet-active
+                        background #02a774
+        .msite_shop_list
+                top-border-1px(#e4e4e4)
+                margin-top 10px
+                background #fff
+                .shop_header
+                    padding 10px 10px 0
+                    .shop_icon
+                        margin-left 5px
+                        color #999
+                    .shop_header_title
+                        color #999
+                        font-size 14px
+                        line-height 20px
 </style>
